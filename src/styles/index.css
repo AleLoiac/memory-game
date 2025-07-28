@@ -1,3 +1,12 @@
+@font-face {
+  font-family: "Pokemon GB";
+  src: url("/src/assets/font/PokemonGB.woff2") format("woff2"),
+    url("/src/assets/font/PokemonGB.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
