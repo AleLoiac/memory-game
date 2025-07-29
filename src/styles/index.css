@@ -1,4 +1,13 @@
 @font-face {
+  font-family: "Press Start 2P";
+  src: url("/src/assets/font/PressStart2P-Regular.woff2") format("woff2"),
+    url("/src/assets/font/PressStart2P-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
   font-family: "Pokemon GB";
   src: url("/src/assets/font/PokemonGB.woff2") format("woff2"),
     url("/src/assets/font/PokemonGB.woff") format("woff");
@@ -10,7 +19,6 @@
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
-  font-weight: 400;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
@@ -32,11 +40,6 @@ a:hover {
 
 body {
   margin: 0;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
 }
 
 button {

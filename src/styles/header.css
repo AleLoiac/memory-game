@@ -1,0 +1,20 @@
+.header {
+  font-family: "Pokemon GB", system-ui, Avenir, Helvetica, Arial, sans-serif;
+  background-color: white;
+  color: black;
+  padding: 1px 1px 1px 10px;
+  border: 20px solid black;
+  border-image: url(../assets/image/pokemon-border-img.png) 44;
+}
+
+h1 {
+  font-family: "Press Start 2P", system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+p {
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+}
