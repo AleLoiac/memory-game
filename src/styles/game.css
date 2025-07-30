@@ -24,9 +24,8 @@
 
 .pokemon {
   position: absolute;
+  cursor: pointer;
   transform: translate(-50%, -50%);
   pointer-events: auto;
-  width: 40px;
-  height: 40px;
-  background-color: orange;
+  scale: 200%;
 }
