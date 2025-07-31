@@ -5,8 +5,8 @@ export default function Header() {
     <div className="header">
       <h1>Pokemon Memory Game</h1>
       <p>
-        Try to find all the pokemons, but don't click on the same one more than
-        once or your score will reset!
+        Find all the Pokémon, but if you click the same one twice, your score
+        resets!
       </p>
     </div>
   );

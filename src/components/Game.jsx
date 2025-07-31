@@ -10,10 +10,10 @@ export default function Game() {
   const REFERENCE_HEIGHT = 1080;
 
   const elements = [
-    { id: 1, x: 510, y: 420, content: pokemons[0] },
-    { id: 2, x: 1305, y: 620, content: pokemons[1] },
-    { id: 3, x: 760, y: 975, content: pokemons[2] },
-    { id: 4, x: 1530, y: 830, content: pokemons[3] },
+    { id: 1, x: 500, y: 400, content: pokemons[0] },
+    { id: 2, x: 1270, y: 600, content: pokemons[1] },
+    { id: 3, x: 700, y: 930, content: pokemons[2] },
+    { id: 4, x: 1570, y: 800, content: pokemons[3] },
   ];
 
   useEffect(() => {
@@ -24,6 +24,10 @@ export default function Game() {
 
     loadPokemons();
   }, []);
+
+  const shufflePokemon = () => {
+    setPokemons((prev) => shuffleArray(prev));
+  };
 
   return (
     <div className="game">
@@ -48,6 +52,7 @@ export default function Game() {
               className="pokemon"
               style={{ left, top }}
               alt={`pokemon-${el.id}`}
+              onClick={shufflePokemon}
             />
           );
         })}
@@ -75,4 +80,21 @@ async function fetchPokemons(n) {
   }
 
   return pokemons;
+}
+
+function shuffleArray(array) {
+  const copy = [...array];
+  let currentIndex = copy.length;
+
+  while (currentIndex != 0) {
+    let randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    [copy[currentIndex], copy[randomIndex]] = [
+      copy[randomIndex],
+      copy[currentIndex],
+    ];
+  }
+
+  return copy;
 }
