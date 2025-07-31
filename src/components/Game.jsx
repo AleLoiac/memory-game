@@ -64,7 +64,7 @@ export default function Game() {
 async function fetchPokemons(n) {
   const pokemons = [];
 
-  for (let i = 0; i < n; i++) {
+  for (let i = 0; i < n; ) {
     // considering only pokemons up to the third generation
     const randomId = Math.floor(Math.random() * 386 + 1);
 
@@ -73,10 +73,14 @@ async function fetchPokemons(n) {
     );
     const pokemon = await response.json();
 
-    pokemons.push(
+    const sprite =
       pokemon.sprites.versions["generation-v"]["black-white"].animated
-        .front_default
-    );
+        .front_default;
+
+    if (!pokemons.includes(sprite)) {
+      pokemons.push(sprite);
+      i++;
+    }
   }
 
   return pokemons;
