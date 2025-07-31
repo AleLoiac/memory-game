@@ -5,6 +5,8 @@ export default function Game() {
   const pokemonBackground = "../src/assets/video/pokemon-emerald-waterfall.mp4";
 
   const [pokemons, setPokemons] = useState([]);
+  const [foundPokemons, setFoundPokemons] = useState([]);
+  let [score, setScore] = useState(0);
 
   const REFERENCE_WIDTH = 1920;
   const REFERENCE_HEIGHT = 1080;
@@ -31,6 +33,19 @@ export default function Game() {
     setPokemons((prev) => shuffleArray(prev));
   };
 
+  const clickPokemon = (content) => {
+    if (!foundPokemons.includes(content)) {
+      shufflePokemon();
+      setScore((prev) => prev + 1);
+      setFoundPokemons((prev) => [...prev, content]);
+      console.log("Score:", score + 1);
+    } else {
+      console.log("You lost");
+      setScore(0);
+      setFoundPokemons([]);
+    }
+  };
+
   return (
     <div className="game">
       <video
@@ -54,7 +69,7 @@ export default function Game() {
               className="pokemon"
               style={{ left, top }}
               alt={`pokemon-${el.id}`}
-              onClick={shufflePokemon}
+              onClick={() => clickPokemon(el.content)}
             />
           );
         })}
