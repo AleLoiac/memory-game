@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "../styles/game.css";
+import Score from "./Score";
 
 export default function Game() {
   const pokemonBackground = "../src/assets/video/pokemon-emerald-waterfall.mp4";
@@ -14,7 +15,7 @@ export default function Game() {
   const elements = [
     { id: 1, x: 500, y: 400, content: pokemons[0] },
     { id: 2, x: 1270, y: 600, content: pokemons[1] },
-    { id: 3, x: 730, y: 940, content: pokemons[2] },
+    { id: 3, x: 730, y: 840, content: pokemons[2] },
     { id: 4, x: 1570, y: 800, content: pokemons[3] },
     { id: 5, x: 320, y: 900, content: pokemons[4] },
     { id: 6, x: 790, y: 580, content: pokemons[5] },
@@ -74,6 +75,7 @@ export default function Game() {
           );
         })}
       </div>
+      <Score score={score} />
     </div>
   );
 }
