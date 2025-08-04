@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react";
 import "../styles/game.css";
 import Score from "./Score";
+import WinDialog from "./WinDialog";
 
 export default function Game() {
   const pokemonBackground = "../src/assets/video/pokemon-emerald-waterfall.mp4";
 
   const [pokemons, setPokemons] = useState([]);
   const [foundPokemons, setFoundPokemons] = useState([]);
-  let [score, setScore] = useState(0);
+  const [score, setScore] = useState(0);
+  const [openWinDialog, setOpenWinDialog] = useState(false);
 
   const REFERENCE_WIDTH = 1920;
   const REFERENCE_HEIGHT = 1080;
@@ -40,6 +42,11 @@ export default function Game() {
       setScore((prev) => prev + 1);
       setFoundPokemons((prev) => [...prev, content]);
       console.log("Score:", score + 1);
+
+      if (score + 1 === pokemons.length) {
+        setOpenWinDialog(true);
+        console.log("You won!");
+      }
     } else {
       console.log("You lost");
       setScore(0);
@@ -47,8 +54,14 @@ export default function Game() {
     }
   };
 
+  const playAgain = () => {
+    setOpenWinDialog(false);
+    window.location.reload();
+  };
+
   return (
     <div className="game">
+      <WinDialog openWinDialog={openWinDialog} playAgain={playAgain} />
       <video
         src={pokemonBackground}
         className="bgVideo"
