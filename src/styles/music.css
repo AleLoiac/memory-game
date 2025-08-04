@@ -10,9 +10,9 @@
 }
 
 .musicOn {
-  background-image: url(../../public/music-on.svg);
+  background-image: url(/music-on.svg);
 }
 
 .musicOff {
-  background-image: url(../../public/music-off.svg);
+  background-image: url(/music-off.svg);
 }
