@@ -4,7 +4,7 @@ import Score from "./Score";
 import WinDialog from "./WinDialog";
 
 export default function Game() {
-  const pokemonBackground = "../src/assets/video/pokemon-emerald-waterfall.mp4";
+  const pokemonBackground = "../video/pokemon-emerald-waterfall.mp4";
 
   const [pokemons, setPokemons] = useState([]);
   const [foundPokemons, setFoundPokemons] = useState([]);
