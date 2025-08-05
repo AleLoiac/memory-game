@@ -29,10 +29,11 @@ export default function Music() {
   };
 
   return (
-    <img
+    <div
       className={audioClass}
       onClick={toggleSong}
-      alt="Toggle music button"
+      role="button"
+      aria-label="Toggle music"
     />
   );
 }
