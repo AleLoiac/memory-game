@@ -28,5 +28,11 @@ export default function Music() {
     }
   };
 
-  return <img className={audioClass} onClick={toggleSong} />;
+  return (
+    <img
+      className={audioClass}
+      onClick={toggleSong}
+      alt="Toggle music button"
+    />
+  );
 }
