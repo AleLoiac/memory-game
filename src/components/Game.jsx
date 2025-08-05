@@ -56,7 +56,15 @@ export default function Game() {
 
   const playAgain = () => {
     setOpenWinDialog(false);
-    window.location.reload();
+    setScore(0);
+    setFoundPokemons([]);
+
+    async function loadPokemons() {
+      const result = await fetchPokemons(6);
+      setPokemons(result);
+    }
+
+    loadPokemons();
   };
 
   return (
