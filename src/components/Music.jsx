@@ -8,7 +8,7 @@ export default function Music() {
 
   useEffect(() => {
     const newAudio = new Audio(
-      "/audio/Pokemon Mystery Dungeon - Friend Area - Pond.mp3"
+      "../audio/Pokemon Mystery Dungeon - Friend Area - Pond.mp3"
     );
     setAudio(newAudio);
     newAudio.loop = true;
